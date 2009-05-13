@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 
 public class PainelBotoes extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private JButton jbtnNovosDados, jbtnLimparTudo, jbtnCalcularRaiz;
 
 	public PainelBotoes() {
@@ -19,9 +20,9 @@ public class PainelBotoes extends JPanel {
 
 		ImageIcon iconeNovo, iconeLimpar, iconeCalcular;
 
-		iconeNovo = new ImageIcon("bissecao/recursos/Novo 32x32.PNG");
-		iconeLimpar = new ImageIcon("bissecao/recursos/Limpar 32x32.GIF");
-		iconeCalcular = new ImageIcon("bissecao/recursos/Calcular 32x32.PNG");
+		iconeNovo = new ImageIcon("Novo 32x32.PNG");
+		iconeLimpar = new ImageIcon("Limpar 32x32.GIF");
+		iconeCalcular = new ImageIcon("Calcular 32x32.PNG");
 
 		GridBagConstraints cnstrtNovosDados = new GridBagConstraints();
 		GridBagConstraints cnstrtLimparTudo = new GridBagConstraints();
@@ -54,7 +55,7 @@ public class PainelBotoes extends JPanel {
 		cnstrtLimparTudo.ipady = pady;
 		cnstrtLimparTudo.insets = insets;
 
-		this.jbtnCalcularRaiz = new JButton("Calcular ra�z", iconeCalcular);
+		this.jbtnCalcularRaiz = new JButton("Calcular raíz", iconeCalcular);
 		this.jbtnCalcularRaiz.setMnemonic('C');
 		this.jbtnCalcularRaiz.setPreferredSize(tamanhoBotoes);
 		this.jbtnCalcularRaiz.setIconTextGap(espacoIconeTexto);

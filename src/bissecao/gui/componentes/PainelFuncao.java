@@ -15,27 +15,22 @@ import javax.swing.border.Border;
 import bissecao.calculo.FuncaoRealX;
 
 public class PainelFuncao extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private final String FUNCAO_INDEFINIDA = "F(X) = ???";
 	private JLabel jlblFuncao;
 
 	public PainelFuncao() {
 		super(new BorderLayout());
-
-		Border bordaBaixa = BorderFactory
-				.createBevelBorder(BevelBorder.LOWERED);
-
+		
+		Border bordaBaixa = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
 		Border bordaAlta = BorderFactory.createBevelBorder(BevelBorder.RAISED);
-
-		Border bordaComposta = BorderFactory.createCompoundBorder(bordaAlta,
-				bordaBaixa);
-
+		Border bordaComposta = BorderFactory.createCompoundBorder(bordaAlta, bordaBaixa);
 		this.setBorder(bordaComposta);
 
 		this.jlblFuncao = new JLabel(this.FUNCAO_INDEFINIDA);
 		this.jlblFuncao.setHorizontalTextPosition(SwingConstants.CENTER);
 		this.jlblFuncao.setHorizontalAlignment(SwingConstants.CENTER);
-		this.jlblFuncao
-				.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 36));
+		this.jlblFuncao.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 36));
 		this.jlblFuncao.setPreferredSize(new Dimension(215, 50));
 
 		this.add(this.jlblFuncao, BorderLayout.CENTER);

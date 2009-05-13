@@ -15,12 +15,11 @@ import bissecao.calculo.FuncaoRealX;
 import bissecao.util.FuncoesReais;
 
 public class PainelCampos extends JPanel {
+	private static final long serialVersionUID = 1L;
 	private JPanel painelPrincipal;
 	private JComboBox jcmbxSelecaoFuncoes;
 	private JLabel jlblA0, jlblB0, jlblEpsilon, jlblNumeroMaximoIteracoes;
-
-	private JTextField jtxtfldA0, jtxtfldB0, jtxtfldEpsilon,
-			jtxtfldNumeroIteracoes;
+	private JTextField jtxtfldA0, jtxtfldB0, jtxtfldEpsilon, jtxtfldNumeroIteracoes;
 
 	public PainelCampos() {
 		super(new BorderLayout(0, 40));
@@ -31,17 +30,13 @@ public class PainelCampos extends JPanel {
 		this.jcmbxSelecaoFuncoes = new JComboBox(listaFuncoes);
 		this.jcmbxSelecaoFuncoes.setEditable(false);
 		this.jcmbxSelecaoFuncoes.setSelectedItem(null);
-		this.jcmbxSelecaoFuncoes.setToolTipText("Selecione uma fun��o");
+		this.jcmbxSelecaoFuncoes.setToolTipText("Selecione uma função");
 		this.jcmbxSelecaoFuncoes.setFont(new Font("Arial", Font.BOLD, 16));
 
-		this.jlblA0 = new JLabel(
-				"A0.......................................................:");
-		this.jlblB0 = new JLabel(
-				"B0.......................................................:");
-		this.jlblEpsilon = new JLabel(
-				"Epsilon..............................................:");
-		this.jlblNumeroMaximoIteracoes = new JLabel(
-				"N - n�mero m�ximo de itera��es:");
+		this.jlblA0 = new JLabel("A0.......................................................:");
+		this.jlblB0 = new JLabel("B0.......................................................:");
+		this.jlblEpsilon = new JLabel("Epsilon..............................................:");
+		this.jlblNumeroMaximoIteracoes = new JLabel("N - número máximo de iterações:");
 
 		this.jtxtfldA0 = new JTextField();
 		this.jtxtfldA0.setToolTipText("Valor de A0");
@@ -53,8 +48,7 @@ public class PainelCampos extends JPanel {
 		this.jtxtfldEpsilon.setToolTipText("Valor de Epsilon");
 
 		this.jtxtfldNumeroIteracoes = new JTextField();
-		this.jtxtfldNumeroIteracoes
-				.setToolTipText("N�mero m�ximo de itera��es");
+		this.jtxtfldNumeroIteracoes.setToolTipText("Número máximo de iterações");
 
 		this.limparCampos(true);
 

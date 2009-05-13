@@ -21,6 +21,7 @@ import bissecao.gui.componentes.PainelBotoes;
 import bissecao.gui.componentes.GridRaizes;
 
 public class FrameBissecao extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private Container contentPane;
 	private JPanel painelPrincipal;
 	private PainelFuncao painelFuncao;
@@ -54,47 +55,36 @@ public class FrameBissecao extends JFrame {
 			bissecao = new MetodoBissecao();
 		}
 
-		private void exibirResultados() throws IllegalArgumentException,
-				Exception {
-			gridRaizes.setResultado(this.bissecao.calcularRaiz(), this.bissecao
-					.getIteracoesUsadas());
+		private void exibirResultados() throws Exception {
+			gridRaizes.setResultado(this.bissecao.calcularRaiz(), this.bissecao.getIteracoesUsadas());
 		}
 
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent event) {
 			try {
 				this.bissecao.setFuncao(painelCampos.getFuncaoSelecionada());
-				this.bissecao.setIntervalo(painelCampos.getA0(), painelCampos
-						.getB0());
+				this.bissecao.setIntervalo(painelCampos.getA0(), painelCampos.getB0());
 				this.bissecao.setEpsilon(painelCampos.getEpsilon());
-
-				this.bissecao.setIteracaoMaxima(painelCampos
-						.getNumeroMaximoIteracoes());
-
+				this.bissecao.setIteracaoMaxima(painelCampos.getNumeroMaximoIteracoes());
 				this.exibirResultados();
-			} catch (IllegalArgumentException iae) {
-				JOptionPane.showMessageDialog(null, iae, "Valores inv�lidos",
-						JOptionPane.INFORMATION_MESSAGE);
-
+			} 
+			catch (IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null, e, "Valores inválidos", JOptionPane.INFORMATION_MESSAGE);
 				painelCampos.limparCampos(false);
-			} catch (Exception exc) {
-				JOptionPane
-						.showMessageDialog(
-								null,
-								"Ocorreu um erro. \nTente novamente com outros valores.",
-								"Erro", JOptionPane.ERROR_MESSAGE);
-
+			} 
+			catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Ocorreu um erro. \nTente novamente com outros valores.", "Erro", JOptionPane.ERROR_MESSAGE);
 				painelCampos.limparCampos(false);
 			}
 		}
 	}
 
 	public FrameBissecao() {
-		super("M�todo da bisse��o");
+		super("Método da bisseção");
 
 		try {
 			UIManager.setLookAndFeel("com.birosoft.liquid.LiquidLookAndFeel");
 		} catch (Exception e) {
-			// ignora e segue em frente com o l.a.f. padr�o
+			// ignora e segue em frente com o l.a.f. padrão
 		}
 
 		this.criarComponentes();

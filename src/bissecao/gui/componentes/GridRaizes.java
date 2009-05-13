@@ -8,9 +8,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class GridRaizes extends JScrollPane {
+	private static final long serialVersionUID = 1L;
 	private JTable jtblRaizes;
 	private DefaultTableModel tableModel;
-	private String titulosColunas[] = { "Ra�zes", "Itera��es" };
+	private String titulosColunas[] = { "Raízes", "Iterações" };
 	private Object dadosTabela[][] = {};
 
 	public GridRaizes() {
