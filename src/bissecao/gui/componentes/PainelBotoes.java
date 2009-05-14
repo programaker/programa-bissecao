@@ -6,9 +6,10 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 public class PainelBotoes extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -18,11 +19,11 @@ public class PainelBotoes extends JPanel {
 		this.setLayout(new GridBagLayout());
 		this.setPreferredSize(new Dimension(600, 50));
 
-		ImageIcon iconeNovo, iconeLimpar, iconeCalcular;
-
-		iconeNovo = new ImageIcon("Novo 32x32.PNG");
-		iconeLimpar = new ImageIcon("Limpar 32x32.GIF");
-		iconeCalcular = new ImageIcon("Calcular 32x32.PNG");
+		Class<? extends PainelBotoes> thisClass = getClass();
+		Icon iconeNovo, iconeLimpar, iconeCalcular;
+		iconeNovo = new ImageIcon(thisClass.getResource("/recursos/novo.png"));
+		iconeLimpar = new ImageIcon(thisClass.getResource("/recursos/limpar.gif"));
+		iconeCalcular = new ImageIcon(thisClass.getResource("/recursos/calcular.png"));
 
 		GridBagConstraints cnstrtNovosDados = new GridBagConstraints();
 		GridBagConstraints cnstrtLimparTudo = new GridBagConstraints();

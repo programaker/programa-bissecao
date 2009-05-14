@@ -1,11 +1,16 @@
 package bissecao.util;
 
-import bissecao.calculo.FuncaoRealX;
+import static java.lang.Math.E;
+import static java.lang.Math.log;
+import static java.lang.Math.pow;
+
 import java.util.ArrayList;
-import static java.lang.Math.*;
+import java.util.List;
+
+import bissecao.calculo.FuncaoRealX;
 
 public class FuncoesReais {
-	private ArrayList<FuncaoRealX> funcoes;
+	private List<FuncaoRealX> funcoes;
 
 	private class Funcao1 implements FuncaoRealX {
 		public double getValor(double x) {
@@ -33,7 +38,7 @@ public class FuncoesReais {
 		}
 
 		public String toString() {
-			return "f(x) = 3x� - e^x";
+			return "f(x) = 3x² - e^x";
 		}
 	}
 
@@ -43,12 +48,12 @@ public class FuncoesReais {
 		}
 
 		public String toString() {
-			return "f(x) = 2e^x - 5x�";
+			return "f(x) = 2e^x - 5x²";
 		}
 	}
 
 	public FuncoesReais() {
-		this.funcoes = new ArrayList<FuncaoRealX>();
+		funcoes = new ArrayList<FuncaoRealX>();
 		funcoes.add(new Funcao1());
 		funcoes.add(new Funcao2());
 		funcoes.add(new Funcao3());

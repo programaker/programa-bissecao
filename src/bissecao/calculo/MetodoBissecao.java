@@ -39,13 +39,13 @@ public class MetodoBissecao {
 		this.funcao = funcao;
 	}
 
-	public void setIntervalo(double a0, double b0)
-			throws IllegalArgumentException {
+	public void setIntervalo(double a0, double b0) {
 		if (a0 < b0) {
 			this.a0 = a0;
 			this.b0 = b0;
-		} else
-			throw new IllegalArgumentException("A0 deve ser maior que B0");
+		} else {
+			throw new IllegalArgumentException("A0 deve ser menor que B0");
+		}
 	}
 
 	public void setEpsilon(double epsilon) {
@@ -61,30 +61,30 @@ public class MetodoBissecao {
 	}
 
 	private void verificarIntervalo() throws IllegalArgumentException {
-		if (this.funcao.getValor(a0) * this.funcao.getValor(b0) < 0)
-			throw new IllegalArgumentException(
-					"N�o h� ra�z entre A0 e B0 fornecidos. Tente outro intervalo");
+		if (this.funcao.getValor(a0) * this.funcao.getValor(b0) < 0) {
+			throw new IllegalArgumentException("Não há raíz entre A0 e B0 fornecidos. Tente outro intervalo");
+		}
 	}
 
 	public double calcularRaiz() throws Exception, IllegalArgumentException {
 		double x0 = 0, x1 = 0;
-
 		this.verificarIntervalo();
 
-		// itera at� o n� m�ximo "iteracaoMaxima"
+		// itera ate o numero maximo "iteracaoMaxima"
 		for (int i = 1; i <= this.iteracaoMaxima; i++) {
 			this.iteracoesUsadas = i;
 			x1 = (a0 + b0) / 2;
 
-			// crit�rio de parada: sai da itera��o para retornar a ra�z ou
-			// continua
-			if (Math.abs(x0 - x1) <= this.epsilon)
+			// criterio de parada: sai da iteraçãoo para retornar a raíz ou continua
+			if (Math.abs(x0 - x1) <= this.epsilon) {
 				break;
+			}
 
-			if (this.funcao.getValor(x1) > 0)
+			if (this.funcao.getValor(x1) > 0) {
 				this.a0 = x1;
-			else
+			} else {
 				this.b0 = x1;
+			}
 
 			x0 = x1;
 		}

@@ -68,12 +68,12 @@ public class FrameBissecao extends JFrame {
 				this.exibirResultados();
 			} 
 			catch (IllegalArgumentException e) {
-				JOptionPane.showMessageDialog(null, e, "Valores inválidos", JOptionPane.INFORMATION_MESSAGE);
-				painelCampos.limparCampos(false);
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Valores inválidos", JOptionPane.INFORMATION_MESSAGE);
+				/*painelCampos.limparCampos(false);*/
 			} 
 			catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Ocorreu um erro. \nTente novamente com outros valores.", "Erro", JOptionPane.ERROR_MESSAGE);
-				painelCampos.limparCampos(false);
+				/*painelCampos.limparCampos(false);*/
 			}
 		}
 	}
